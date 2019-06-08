@@ -1,0 +1,5 @@
+---
+disribution: 'CDN'
+satellite_maintain_state : latest
+target_version: '6.5'
+whitelist_options: 'disk-performance'

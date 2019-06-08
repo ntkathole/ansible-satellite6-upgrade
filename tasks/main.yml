@@ -1,0 +1,16 @@
+---
+- name: 'Setup satellite maintenance repository'
+  command: "subscription-manager repos --enable rhel-7-server-satellite-maintenance-6-rpms"
+
+- name: 'Update satellite maintain'
+  yum:
+    name: "rubygem-foreman_maintain"
+    state: "{{ satellite_maintain_state }}"
+
+- name: 'Perform upgrade check'
+  command: "foreman-maintain upgrade check --target-version {{ target_version }} -y"
+  ignore_errors: yes
+
+- name: 'Perform satellite upgrade'
+  command: "foreman-maintain upgrade run --whitelist={{ whitelist_options }} --target-version {{ target_version }} -y"
+

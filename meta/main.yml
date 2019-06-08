@@ -1,0 +1,16 @@
+---
+dependencies: []
+galaxy_info:
+  role_name: satellite6_upgrade
+  author: ntkathole
+  description: Performs satellite 6 upgrade
+  license: GPL-3.0
+  min_ansible_version: 2.7
+  platforms:
+    - name: EL
+      versions:
+        - 7
+  galaxy_tags:
+    - satellite6
+    - foreman-maintain
+    - upgrade
